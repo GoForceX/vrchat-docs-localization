@@ -14,22 +14,22 @@ description: "学习如何在Unity中创建VRChat的虚拟形象或世界项目"
 这是当下创建一个项目最简单的方式，强烈推荐使用！不这样做则会让您在之后走更多的步骤，您的项目也可能会更加容易出错。
 
 ## 您的第一个项目
-针对第一个项目，我们预先假设您正在构建一个 Windows PC 内容。
+针对第一个项目，我们预先假设您正在为 Windows 电脑构建内容。
+
+::: info 笔记
+如果您想构建 Quest 上的内容，可以来看看这个： [在Unity中构建Quest内容](/creators.vrchat.com/platforms/android/setting-up-unity-for-creating-quest-content)。
+:::
 
 1. 点击 [这里](https://vrchat.com/download/vcc) 下载创作者助手
     - 您也可以在 [这里](https://vcc.docs.vrchat.com/) 查看 创作者助手 的文档
 
-:::note
-如果您想构建 Quest 上的内容，可以来看看这个： [在Unity中构建Quest内容](/creators.vrchat.com/platforms/android/setting-up-unity-for-creating-quest-content)。
-:::
-
-2. 在安装窗口中继续。安装位置将默认为 `:\Users\UserName\AppData\Local\Programs` ，但您可以根据需要更改此位置。
+2. 在安装窗口中继续。安装位置将默认为 `C:\Users\UserName\AppData\Local\Programs` ，但您可以根据需要更改此位置。
 
 3. 创作者助手会在安装后自动启动。 如果没有启动，可以尝试在Windows的搜索栏中输入 **Creator Companion** 找到它。
 
 4. 点击 **Create New Project** 按钮。
 
-5. 选择您要创建 **虚拟形象** 还是 **世界**
+5. 选择您要创建 **虚拟形象** 还是 **世界**。
 
 6. 给它起一个响亮的名字！
 
@@ -51,7 +51,7 @@ description: "学习如何在Unity中创建VRChat的虚拟形象或世界项目"
 2. 前往 `VRChat SDK > Show Control Panel > Authentication`。
 
 3. 登录您的 VRChat 账号。上传世界和虚拟形象必须登录账号。
-    - 您需要拥有一个等级至少为 “New User” [Trust Rank](/docs.vrchat.com/docs/vrchat-safety-and-trust-system) 的账号才可以上传内容。您不能使用 Steam、Oculus 或 Viveport 账号上传内容。
+    - 您需要拥有一个等级至少为 “New User” [信誉级别](/docs.vrchat.com/docs/vrchat-safety-and-trust-system) 的账号才可以上传内容。您不能使用 Steam、Meta 或 Viveport 账号上传内容。
 
 ## 改为使用 Unity Hub
 
@@ -73,7 +73,7 @@ description: "学习如何在Unity中创建VRChat的虚拟形象或世界项目"
 - 如果您在为 Quest 平台构建内容，则需要选择目标平台为 Android，具体可以参考文档：[Android](/creators.vrchat.com/platforms/android/)。
 - 将项目保存在空间较大的大容量硬盘中。Unity 项目可能会很大，尤其是在使用版本管理软件的情况下。
 - 不要将一个项目用于大量不同的虚拟形象或世界。这样做会让未来的迁移工作变得非常麻烦！
-- 如果您知道如何使用版本控制软件，如 [Git](https://git-scm.com/) 或 [Plastic SCM](https://www.plasticscm.com/)，建议使用它们！这些软件能够帮您快速撤回那些破坏您项目的更改。
+- 如果您知道如何使用版本控制软件，如 [Git](https://git-scm.com/) 或 [Unity 版本控制](https://unity.com/solutions/version-control)，建议使用它们！这些软件能够帮您快速撤回那些破坏您项目的更改。
 
 ### 下一步是什么？
 
