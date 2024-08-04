@@ -156,8 +156,8 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
           items: [
             { text: '当前支持的 Unity 版本', link: '/creators.vrchat.com/sdk/upgrade/current-unity-version' },
             { text: '将项目升级到 2022', link: '/creators.vrchat.com/sdk/upgrade/unity-2022' },
-            { text: 'New Worlds and Avatars in 2022', link: '/creators.vrchat.com/sdk/upgrade/worlds-and-avatars-in-2022' },
-            { text: 'Minor Unity Upgrades', link: '/creators.vrchat.com/sdk/upgrade/migrating-to-a-newer-minor-unity-version' },
+            { text: '2022 版本中的新世界和虚拟形象', link: '/creators.vrchat.com/sdk/upgrade/worlds-and-avatars-in-2022' },
+            { text: 'Unity 小版本升级', link: '/creators.vrchat.com/sdk/upgrade/migrating-to-a-newer-minor-unity-version' },
           ],
         },
         { text: '构建管线回调 (Pipeline Callbacks) 和接口 (Interfaces)', link: '/creators.vrchat.com/sdk/build-pipeline-callbacks-and-interfaces' },
