@@ -146,11 +146,11 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
   return [
     { text: '欢迎!', link: '/creators.vrchat.com/getting-started' },
     {
-      text: 'Getting Started', link: '/creators.vrchat.com/sdk/',
+      text: '快速开始', link: '/creators.vrchat.com/sdk/',
       collapsed: true,
       items: [
         {
-          text: 'Managing Unity',
+          text: 'Unity 管理指南',
           link: '/creators.vrchat.com/sdk/upgrade/',
           collapsed: true,
           items: [
