@@ -161,6 +161,7 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
           ],
         },
         { text: '构建管线回调 (Pipeline Callbacks) 和接口 (Interfaces)', link: '/creators.vrchat.com/sdk/build-pipeline-callbacks-and-interfaces' },
+        { text: '检测 VRChat SDK', link: '/creators.vrchat.com/sdk/detecting-vrcsdk' },
         { text: '公开 SDK API', link: '/creators.vrchat.com/sdk/public-sdk-api' },
         { text: 'SDK 疑难解答', link: '/creators.vrchat.com/sdk/sdk-troubleshooting' },
         { text: '升级 SDK', link: '/creators.vrchat.com/sdk/updating-the-sdk' },
