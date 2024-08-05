@@ -4,18 +4,18 @@ title: "检测 VRChat SDK"
 
 # 检测 VRChat SDK
 
-There are several ways to detect the VRChat SDK in a Unity project. This can be helpful when developing Unity tools or libraries that do not depend on the VRChat SDK, but may still want to utilize [VRChat's SDK API](/sdk/public-sdk-api).
+有很多方法可以在 Unity 项目中检测 VRChat SDK。在开发不依赖 VRChat SDK 的 Unity 工具或库，但仍想利用 [VRChat 的 SDK API](/creators.vrchat.com/sdk/public-sdk-api) 时，这会很有帮助。
 
-## Using Version Defines (Recommended) {#using-version-defines}
+## 使用版本定义（Version Defines）（建议） {#using-version-defines}
 
-The best way to detect the VRChat SDK is with [Version Defines in your assembly definition file][version-defines].
+检测 VRChat SDK 的最好方式就是通过[程序集定义文件中的版本定义（Version Defines）][version-defines]。
 
-You can define symbols in your assembly when `com.vrchat.base`, `com.vrchat.avatars`, or `com.vrchat.worlds` are installed.
-It is recommended to only use the "Expression" property to define your symbol when the installed VRChat SDK version is compatible with your tool.
-For versioning of VRChat SDK, please refer to the [Creation Companion documentation][versioning].
+当 `com.vrchat.base`、`com.vrchat.avatars` 或 `com.vrchat.worlds` 已安装时，您可以在程序集中定义符号。
+在安装的 VRChat SDK 版本与您的工具兼容时，建议仅使用“Expression”属性来定义您的符号。
+对于 VRChat SDK 的版本控制，请参考[创作者助手文档][versioning]。
 
-Since Version Defines is a feature for UPM packages, this method only works for VPM-based SDKs, which are treated as UPM packages by Unity.
-If you also want to detect legacy `.unitypackage`-based SDKs, use legacy method below by defining the same symbol as the VRCSDK defines, or adding the following code to every file:
+由于版本定义是 UPM 包的一个功能，因此这种方式仅适用于基于 VPM 的 SDK，这些 SDK 被 Unity 视为 UPM 包。
+如果你也想检测旧版的基于 `.unitypackage` 的 SDK，请使用下面的旧版方法定义与 VRCSDK 相同的符号，或者在每个文件中添加以下代码：
 
 ```csharp
 #if !YOUR_VRCSDK3_AVATARS && !YOUR_VRCSDK3_WORLDS && VRC_SDK_VRCSDK3
@@ -30,13 +30,13 @@ If you also want to detect legacy `.unitypackage`-based SDKs, use legacy method 
 [version-defines]: https://docs.unity3d.com/2019.4/Documentation/Manual/ScriptCompilationAssemblyDefinitionFiles.html#define-symbols
 [versioning]: https://vcc.docs.vrchat.com/vpm/packages/#brandingbreakingbumps
 
-## Using Legacy VRCSDK-defined scripting symbols (Deprecated) {#using-scripting-symbols}
+## 使用旧版 VRCSDK 定义的脚本符号（已弃用） {#using-scripting-symbols}
 
-The other method to detect VRChat SDK installation is with VRCSDK-defined scripting symbols.
-For all VRCSDK projects, `VRC_SDK_VRCSDK3` will be defined, and for world projects, `UDON` will be defined.
+检测 VRChat SDK 安装的另一种方法使用 VRCSDK 定义的脚本符号。
+对于所有 VRCSDK 项目，`VRC_SDK_VRCSDK3` 都将被定义，对于世界项目，`UDON` 将被定义。
 
-This method is deprecated and will be removed in the future. Do not solely depend on this method.
+这种方式已被弃用，并将会被移除。不要仅仅依赖这种方式。
 
-In the old VRChat SDK, `VRC_SDK_VRCSDK3` and `UDON` symbols were used internally. But because those symbols are active in the whole project, many tools depend on those symbols for detecting the VRChat SDK.
+老版 VRChat SDK 内部使用了 `VRC_SDK_VRCSDK3` 和 `UDON` 符号。但因为这些符号在整个项目中都处于活跃状态，很多工具都依赖这些符号来检测 VRChat SDK。
 
-Currently, in the VRChat SDK, all those symbol usages are migrated to Version Defines. Please migrate to Version Defines as soon as possible!
+现在，VRChat SDK 中所有这些符号的使用都已迁移到版本定义。请尽快迁移到版本定义！
