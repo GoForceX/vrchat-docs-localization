@@ -346,6 +346,13 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
             { text: 'Quest 内容限制', link: '/creators.vrchat.com/platforms/android/quest-content-limitations' },
             { text: 'Quest 内容优化', link: '/creators.vrchat.com/platforms/android/quest-content-optimization' },
           ]
+        },
+        {
+          text: 'PC', link: '/creators.vrchat.com/platforms/pc/',
+          collapsed: true,
+          items: [
+            { text: 'SteamVR 驱动', link: '/creators.vrchat.com/platforms/pc/steamvr-drivers' },
+          ]
         }
       ]
     },
