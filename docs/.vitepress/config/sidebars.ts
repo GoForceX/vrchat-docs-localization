@@ -349,6 +349,7 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
         }
       ]
     },
+    { text: '路线图', link: '/creators.vrchat.com/roadmap' },
   ]
 }
 
