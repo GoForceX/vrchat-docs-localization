@@ -1,7 +1,7 @@
 # PC
 
-This page contains information specific to developing VRChat content on PC. Most of VRChat's documentation refers to PC development, so read our [Getting Started](/creators.vrchat.com/sdk/) page to learn how to develop PC content.
+本页专门介绍了在 PC 平台上开发 VRChat 内容的详细信息。由于 VRChat 的多数文档都侧重于 PC 开发，建议您首先阅读我们的[快速开始](/creators.vrchat.com/sdk/)指南，以掌握 PC 内容开发的基础。
 
-This category currently only contains one page:
+这个类别目前只包含一页：
 
-- [SteamVR Skeletal Hand Tracking Driver Guide](./steamvr-drivers)
+- [SteamVR 骨骼手部追踪驱动教程](./steamvr-drivers)
