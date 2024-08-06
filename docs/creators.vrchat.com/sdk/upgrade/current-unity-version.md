@@ -10,7 +10,7 @@ VRChat 当前推荐使用的 Unity 版本是 [**2022.3.22f1**](https://unity.com
 
 如果您想为 Android 或 Quest 平台创作世界和虚拟形象，可在安装界面选择“Android Build Support”。
 
-**为了使用最新版的 VRChat SDK，必须升级至 Unity 2022。**如果您目前还停留在 Unity 2019，我们强烈推荐您进行升级。否则，您可能无法接收到未来的 SDK 更新，而且一些旧的内容可能会遇到问题。
+**为了使用最新版的 VRChat SDK，必须升级至 Unity 2022**。如果您目前还停留在 Unity 2019，我们强烈推荐您进行升级。否则，您可能无法接收到未来的 SDK 更新，而且一些旧的内容可能会遇到问题。
 
 有关如何从 Unity 2019 升级至 Unity 2022 的详细指南，请[查阅我们的文档](/creators.vrchat.com/sdk/upgrade/unity-2022)。
 
