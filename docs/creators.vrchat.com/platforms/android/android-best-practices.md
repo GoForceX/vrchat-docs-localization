@@ -5,14 +5,14 @@
 然而，移动端玩家和 VR 玩家将体验到完全不同的世界！在本指南中，介绍一些使您的 VRChat 世界在移动端上体验更加舒适愉快的方法。
 
 ::: tip 情报
-VRChat *尚不适用于* Android。它将计划于今年晚些时候发布。
+VRChat is available on Android as an [open beta](https://play.google.com/store/apps/details?id=com.vrchat.mobile.playstore).
 :::
 
 ## 1. 将您的 VRChat World 发布到 Android 平台
 
-在 PC 和 VRChat 支持的所有其他平台上发布您的世界一直都是一个好主意。
+To make your world accessible to more users, publish it on all platforms supported by VRChat.
 
-上传到 Android 的任何世界都可以在 Oculus Quest 2 和 Android 移动端上使用。如果您之前发布过 Quest 版本的世界，它也可以在手机和平板电脑上使用！
+上传到 Android 的任何世界都可以在 Oculus Quest 和 Android 移动端上使用。如果您之前发布过 Quest 版本的世界，它也可以在手机和平板电脑上使用！
 
 要了解如何将您的世界上传到 Android，请参阅我们的[跨平台设置](/creators.vrchat.com/platforms/android/cross-platform-setup.md)文档。
 
@@ -26,7 +26,16 @@ VRChat *尚不适用于* Android。它将计划于今年晚些时候发布。
 
 当 Android 玩家加入您的世界时，您可能需要手动调整它的某些行为。Android 移动端上的玩家将无法使用 VR 控制器，就像 VR 玩家无法使用触控屏一样。
 
-您可以使用 [UdonSharp](/udonsharp.docs.vrchat.com/udonsharp.md) 来检测您世界中的 Android 玩家：
+You can use [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) to detect the input method directly.
+
+```
+public bool IsUsingPhoneOrTablet()
+{
+    return InputManager.GetLastUsedInputMethod() == VRCInputMethod.Touch;
+}
+```
+
+另外，您也可以使用 [UdonSharp](/udonsharp.docs.vrchat.com/udonsharp.md) 来检测您世界中的 Android 玩家：
 
 ```c#
 public bool IsUsingPhoneOrTablet()
@@ -44,17 +53,17 @@ public bool IsUsingPhoneOrTablet()
 - 使用 [Networking.LocalPlayer](/creators.vrchat.com/worlds/udon/players/index.md) 检索有关本地玩家的数据
 - 使用 [IsUserInVR](/creators.vrchat.com/worlds/udon/players/index.md) 检查本地玩家是否在 VR 中。
 
-如果本地玩家使用的是 Android，而不是 VR，则意味着他们正在 Android 手机或平板电脑上玩游戏。
+如果本地玩家使用的是 Android 而不是 VR，则意味着他们正在 Android 手机或平板电脑上玩游戏。
 
-我们正在研究一种以轻松使用 Udon Graph 和 UdonSharp 检测此类平台的方法。
+You can also used [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) to detect input method directly.
 
 ## 3. 针对 Android 优化您的世界
 
 Android 移动端通常不如 PC 强大，请阅读我们的 [Quest 内容优化指南](/creators.vrchat.com/platforms/android/quest-content-optimization.md)，以优化您的世界性能。
 
-好消息是：如果您的世界在 Quest 2 上运行良好，它也有可能会在 Android 移动端上运行良好。手机和平板电脑的分辨率通常低于 VR 头戴式设备，并且性能方面会比 VR 少更多令人头痛的问题。
+好消息是：如果您的世界在 Quest 上运行良好，它也有可能会在 Android 移动端上运行良好。手机和平板电脑的分辨率通常低于 VR 头戴式设备，并且性能方面会比 VR 少更多令人头痛的问题。
 
-您仍应确保 Quest 2 玩家游玩的帧率在可接受的范围内。
+您仍应确保 Quest 玩家游玩的帧率在可接受的范围内。
 
 ## 4. 在 Android 上测试您的世界
 
