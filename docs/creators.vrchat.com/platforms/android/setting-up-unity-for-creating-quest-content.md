@@ -1,13 +1,25 @@
 # 设置 Unity 以创建 Quest 内容
 
-设置 Unity 用于创建 Quest 内容实际上非常简单。这张图片可以很好地解释它：
+![Building for Mobile instructions](/creators.vrchat.com/images/setting-up-unity-for-creating-quest-content-1ac8b19-VRChat_QuestContent_QuickStart.png)
 
-![img](/creators.vrchat.com/images/cross-platform-setup-dfca62a-VRChat_QuestContent_QuickStart.png)
+If you're starting a brand new project, this won't take long at all. However, if you're converting a Windows platform project to an Android platform project, you will have to convert your assets appropriately. This can take quite a while for larger projects.
+
+For more details on best practices when working with dual-platform projects, read our documentation on [Cross-Platform Setup](/creators.vrchat.com/platforms/android/cross-platform-setup).
+
+## 3 Steps to get your world on VRChat for Quest
+
+### 1. Open Your Build Settings
+
+You can access your [Build Settings](https://docs.unity3d.com/Manual/BuildSettings.html) from Unity's main menu by going to "File" -> "Build Settings". Or you can use the keyboard shortcut `Ctrl` + `Shift` + `B`.
+
+### 2. Switch Platform to Android
 
 ::: warning 需要额外的设置
-您需要安装 [Unity 的 Android SDK](https://docs.unity3d.com/2019.4/Documentation/Manual/android-sdksetup.html)。否则该选项将不会弹出。
+If the Android option isn't appearing, [you need to install Unity's Android SDK.](https://docs.unity3d.com/Manual/android-sdksetup.html)
 :::
 
-如果您要开始制作一个全新的项目，这当然不会花费多长时间。但是，如果您要将 Windows 平台的项目转换为 Android 平台的项目，您则必须相应地进行转换资源的操作。对于较大的项目，这可能需要相当长的时间。
+Click "Android" -> "Switch Platform". Unity will reimport your assets for Android. This will take a while for larger projects with many assets.
 
-有关使用双平台项目时的最佳实践的更多详细信息，请阅读有关[跨平台设置](/creators.vrchat.com/platforms/android/cross-platform-setup.md)的文档。
+### 3. Publish -> New Build
+
+That's it! Your content is now available on Quest! Note that you must **upload** your content to test it. You can't use the SDK's "Build and Test" feature for Android content.
