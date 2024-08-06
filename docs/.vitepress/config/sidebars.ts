@@ -146,21 +146,22 @@ export function vrchatCreatorsDocsSidebar(): DefaultTheme.SidebarItem[] {
   return [
     { text: '欢迎!', link: '/creators.vrchat.com/getting-started' },
     {
-      text: 'Getting Started', link: '/creators.vrchat.com/sdk/',
+      text: '快速开始', link: '/creators.vrchat.com/sdk/',
       collapsed: true,
       items: [
         {
-          text: 'Managing Unity',
+          text: 'Unity 管理指南',
           link: '/creators.vrchat.com/sdk/upgrade/',
           collapsed: true,
           items: [
             { text: '当前支持的 Unity 版本', link: '/creators.vrchat.com/sdk/upgrade/current-unity-version' },
-            { text: 'Upgrading Projects to 2022', link: '/creators.vrchat.com/sdk/upgrade/unity-2022' },
-            { text: 'New Worlds and Avatars in 2022', link: '/creators.vrchat.com/sdk/upgrade/worlds-and-avatars-in-2022' },
-            { text: 'Minor Unity Upgrades', link: '/creators.vrchat.com/sdk/upgrade/migrating-to-a-newer-minor-unity-version' },
+            { text: '将项目升级到 2022', link: '/creators.vrchat.com/sdk/upgrade/unity-2022' },
+            { text: '2022 版本中的新世界和虚拟形象', link: '/creators.vrchat.com/sdk/upgrade/worlds-and-avatars-in-2022' },
+            { text: 'Unity 次要版本升级', link: '/creators.vrchat.com/sdk/upgrade/migrating-to-a-newer-minor-unity-version' },
           ],
         },
         { text: '构建管线回调 (Pipeline Callbacks) 和接口 (Interfaces)', link: '/creators.vrchat.com/sdk/build-pipeline-callbacks-and-interfaces' },
+        { text: '检测 VRChat SDK', link: '/creators.vrchat.com/sdk/detecting-vrcsdk' },
         { text: '公开 SDK API', link: '/creators.vrchat.com/sdk/public-sdk-api' },
         { text: 'SDK 疑难解答', link: '/creators.vrchat.com/sdk/sdk-troubleshooting' },
         { text: '升级 SDK', link: '/creators.vrchat.com/sdk/updating-the-sdk' },
