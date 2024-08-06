@@ -5,37 +5,37 @@
 然而，移动端玩家和 VR 玩家将体验到完全不同的世界！在本指南中，介绍一些使您的 VRChat 世界在移动端上体验更加舒适愉快的方法。
 
 ::: tip 情报
-VRChat is available on Android as an [open beta](https://play.google.com/store/apps/details?id=com.vrchat.mobile.playstore).
+VRChat 目前已在 Android 平台推出[公测版](https://play.google.com/store/apps/details?id=com.vrchat.mobile.playstore)。
 :::
 
 ## 1. 将您的 VRChat World 发布到 Android 平台
 
-To make your world accessible to more users, publish it on all platforms supported by VRChat.
+为了使您创作的世界能被更多用户使用，建议您在 VRChat 支持的各个平台上都发布您的作品。
 
 上传到 Android 的任何世界都可以在 Oculus Quest 和 Android 移动端上使用。如果您之前发布过 Quest 版本的世界，它也可以在手机和平板电脑上使用！
 
-要了解如何将您的世界上传到 Android，请参阅我们的[跨平台设置](/creators.vrchat.com/platforms/android/cross-platform-setup.md)文档。
+要了解如何将您的世界上传到 Android，请参阅我们的[跨平台设置](/creators.vrchat.com/platforms/android/cross-platform-setup)文档。
 
 ::: info 笔记
 如果您在 VRChat SDK 相关内容看到 "Quest" 一词，它通常也适用于 Android 平台。
 
-例如：[EasyQuestSwitch](/vcc.docs.vrchat.com/vpm/curated-community-packages.md) 等现有工具非常适合跨平台开发。您并不真正需要一台 Meta Quest！
+例如：[EasyQuestSwitch](/vcc.docs.vrchat.com/vpm/curated-community-packages) 等现有工具非常适合跨平台开发。您并不真正需要一台 Meta Quest！
 :::
 
 ## 2.自动检测您世界中的移动端玩家
 
 当 Android 玩家加入您的世界时，您可能需要手动调整它的某些行为。Android 移动端上的玩家将无法使用 VR 控制器，就像 VR 玩家无法使用触控屏一样。
 
-You can use [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) to detect the input method directly.
+您可以使用 [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) 来直接检测输入方法。
 
-```
+```c#
 public bool IsUsingPhoneOrTablet()
 {
     return InputManager.GetLastUsedInputMethod() == VRCInputMethod.Touch;
 }
 ```
 
-另外，您也可以使用 [UdonSharp](/udonsharp.docs.vrchat.com/udonsharp.md) 来检测您世界中的 Android 玩家：
+另外，您也可以使用 [UdonSharp](/udonsharp.docs.vrchat.com/udonsharp) 来检测您世界中的 Android 玩家：
 
 ```c#
 public bool IsUsingPhoneOrTablet()
@@ -50,16 +50,16 @@ public bool IsUsingPhoneOrTablet()
 其工作原理如下：
 
 - 使用 [conditional compilation（条件编译）](https://docs.unity3d.com/2019.4/Documentation/Manual/PlatformDependentCompilation.html)检测当前平台
-- 使用 [Networking.LocalPlayer](/creators.vrchat.com/worlds/udon/players/index.md) 检索有关本地玩家的数据
-- 使用 [IsUserInVR](/creators.vrchat.com/worlds/udon/players/index.md) 检查本地玩家是否在 VR 中。
+- 使用 [Networking.LocalPlayer](/creators.vrchat.com/worlds/udon/players/) 检索有关本地玩家的数据
+- 使用 [IsUserInVR](/creators.vrchat.com/worlds/udon/players/) 检查本地玩家是否在 VR 中。
 
 如果本地玩家使用的是 Android 而不是 VR，则意味着他们正在 Android 手机或平板电脑上玩游戏。
 
-You can also used [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) to detect input method directly.
+您也可以使用 [GetLastUsedInputMethod](/creators.vrchat.com/worlds/udon/input-events#oninputmethodchanged) 来直接检测输入方法。
 
 ## 3. 针对 Android 优化您的世界
 
-Android 移动端通常不如 PC 强大，请阅读我们的 [Quest 内容优化指南](/creators.vrchat.com/platforms/android/quest-content-optimization.md)，以优化您的世界性能。
+Android 移动端通常不如 PC 强大，请阅读我们的 [Quest 内容优化指南](/creators.vrchat.com/platforms/android/quest-content-optimization)，以优化您的世界性能。
 
 好消息是：如果您的世界在 Quest 上运行良好，它也有可能会在 Android 移动端上运行良好。手机和平板电脑的分辨率通常低于 VR 头戴式设备，并且性能方面会比 VR 少更多令人头痛的问题。
 
@@ -84,7 +84,7 @@ Android 移动端通常不如 PC 强大，请阅读我们的 [Quest 内容优化
 - 本地化文本。与其他平台相比，移动端玩家使用的语言范围要广泛得多。
 - 避免依赖需要 VR 设备或复杂相机移动的交互。
 - 尝试使用[屏幕空间 UI 界面](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/UICanvas.html)。在触控屏上，它们比世界空间画布更容易交互。考虑添加一个 UI 界面，这样玩家就可以从任何地方打开该界面，而无需转到世界的菜单面板。
-- Use the `OnScreenUpdateEvent` to get the orientation and resolution of the player's screen. This will trigger once when they first load into the world, and whenever the orientation of their device changes.
+- 使用 `OnScreenUpdateEvent` 来获取玩家屏幕的方向和分辨率。该事件会在玩家初次进入世界时被触发，并在其设备屏幕方向发生变动时被再次触发。
 
 ## 结论：给玩家一个流畅的游玩体验
 
