@@ -26,36 +26,50 @@ VRChat 目前已在 Android 平台推出[公测版](https://play.google.com/stor
 
 当 Android 玩家加入您的世界时，您可能需要手动调整它的某些行为。Android 移动端上的玩家将无法使用 VR 控制器，就像 VR 玩家无法使用触控屏一样。
 
-您可以使用 [GetLastUsedInputMethod](https://creators.vrchat.com/worlds/udon/input-events/#oninputmethodchanged) 来直接检测输入方法。
+使用 [OnInputMethodChanged](/creators.vrchat.com/worlds/udon/input-events#oninputmethodchanged) 来实时检测玩家输入方式的更改。例如：
 
-```c#
-public bool IsUsingPhoneOrTablet()
-{
-    return InputManager.GetLastUsedInputMethod() == VRCInputMethod.Touch;
+:::tabs key:udon-compiler-language
+== Udon 图
+
+![一张 Udon 图的截图，图中运用了 OnInputMethodChanged 事件，通过判断 inputMethod 参数是否为 Touch 来决定程序的走向。](/creators.vrchat.com/images/worlds/OnInputMethodChanged.png)
+
+== UdonSharp
+
+```cs
+public override void OnInputMethodChanged(VRCInputMethod inputMethod)  
+{  
+    if (inputMethod == VRCInputMethod.Touch)  
+    {  
+        // 运行 Touch 输入的代码。
+    }  
+    else  
+    {  
+        // 运行非 Touch 输入的代码。
+    }  
 }
 ```
+:::
 
-另外，您也可以使用 [UdonSharp](/udonsharp.docs.vrchat.com/udonsharp) 来检测您世界中的 Android 玩家：
+您也可以使用 GetLastUsedInputMethod 来随时检测输入方式。例如：
 
-```c#
-public bool IsUsingPhoneOrTablet()
-{
-  #if UNITY_ANDROID
-  return !VRC.SDKBase.Networking.LocalPlayer.IsUserInVR();
-  #endif
-  return false;
+:::tabs key:udon-compiler-language
+== Udon 图
+
+![一张 Udon 图的截图，图中运用了 GetLastUsedInputMethod 事件，通过判断 inputMethod 参数是否为 Touch 来决定程序的走向。](/creators.vrchat.com/images/worlds/GetLastUsedInputMethod.png)
+
+== UdonSharp
+
+```cs
+if (VRC.SDKBase.InputManager.GetLastUsedInputMethod() == VRCInputMethod.Touch)  
+{  
+    // 运行 Touch 输入的代码。
+}  
+else  
+{  
+    // 运行非 Touch 输入的代码。
 }
 ```
-
-其工作原理如下：
-
-- 使用 [conditional compilation（条件编译）](https://docs.unity3d.com/2019.4/Documentation/Manual/PlatformDependentCompilation.html)检测当前平台
-- 使用 [Networking.LocalPlayer](/creators.vrchat.com/worlds/udon/players/) 检索有关本地玩家的数据
-- 使用 [IsUserInVR](/creators.vrchat.com/worlds/udon/players/) 检查本地玩家是否在 VR 中。
-
-如果本地玩家使用的是 Android 而不是 VR，则意味着他们正在 Android 手机或平板电脑上玩游戏。
-
-您也可以使用 [GetLastUsedInputMethod](/creators.vrchat.com/worlds/udon/input-events#oninputmethodchanged) 来直接检测输入方法。
+:::
 
 ## 3. 针对 Android 优化您的世界
 

@@ -30,13 +30,9 @@
 
 有一些重要的注意事项需要您关心：
 
-- [您需要安装 Unity 的 Android SDK](https://docs.unity3d.com/2019.4/Documentation/Manual/android-sdksetup.html)。否则该选项将不会弹出。
+- [您需要安装 Unity 的 Android SDK](https://docs.unity3d.com/2022.3/Documentation/Manual/android-sdksetup.html)。否则该选项将不会弹出。
 - 虽然您可以在 Windows 和 Android 之间来回切换，**但您可能不会想这样去做**。它会直接改变文件，而您也许想要为 Quest 制作维护一个缩水版的世界，并且......
 - 将世界切换到 Android 平台可能需要**大量**时间。值得庆幸的是，如果您维护的世界项目是两个独立的项目，则您只需执行一次。如果您的项目很大或存着几十个虚拟形象，则您可能只想将所需的内容导出为预制件或 UnityPackages，然后从头开始创建一个空的 Android 项目。 
-
-::: tip 本地缓存服务器
-您可以使用 Unity 的缓存服务器（可在本地运行）来减少切换平台所需的时间。[您可以在此处阅读有关缓存服务器的更多信息](https://docs.unity3d.com/2019.4/Documentation/Manual/CacheServer.html)。请注意，这可能会占用大量磁盘空间。
-:::
 
 ## 微调和优化
 
