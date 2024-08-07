@@ -28,6 +28,8 @@ import { align } from "@mdit/plugin-align"
 // @ts-expect-error
 import figure from "markdown-it-image-figures"
 
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
+
 // refer https://vitepress.dev/reference/site-config for details
 export default withPwa(
   defineConfig({
@@ -248,6 +250,7 @@ export default withPwa(
             classes: "doc-content-image",
             figcaption: "alt",
           })
+          .use(tabsMarkdownPlugin)
       },
     },
 

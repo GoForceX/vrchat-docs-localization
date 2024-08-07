@@ -1,3 +1,11 @@
 # 跨平台
 
-我们支持面向 Windows 的内容构建，以便在电脑和 VR 中使用。您还可以为 Android 构建内容，以便在 Oculus Quest 2 和我们即将发布的 Android 版本上使用。
+VRChat SDK 允许您为以下平台上传世界和虚拟形象：
+- [Windows](/creators.vrchat.com/platforms/pc/)
+  - VR 模式（使用兼容的 VR 设备）
+  - 桌面模式
+- [Android](/creators.vrchat.com/platforms/android/)
+  - Meta Quest 2（或更新设备）
+  - PICO 4（或更新设备）
+  - HTC Vive XR Elite
+  - Android 10（或更高版本）的手机或平板电脑

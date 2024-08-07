@@ -7815,6 +7815,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vitepress-plugin-tabs@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "vitepress-plugin-tabs@npm:0.5.0"
+  peerDependencies:
+    vitepress: ^1.0.0-rc.27
+    vue: ^3.3.8
+  checksum: cdb08260a3c642568300d87bfc651b4dd7b9cafe95d1d58274481d41bd49863001bc3623f1eb251b448a28a876ffa04d6f8210f6e3f481f3c600f3306003d6a9
+  languageName: node
+  linkType: hard
+
 "vitepress@npm:^1.0.2":
   version: 1.0.2
   resolution: "vitepress@npm:1.0.2"
@@ -7880,6 +7890,7 @@ __metadata:
     svgo: "npm:^3.2.0"
     vite-plugin-pwa: "npm:^0.19.7"
     vitepress: "npm:^1.0.2"
+    vitepress-plugin-tabs: "npm:^0.5.0"
     vue-draggable-resizable: "npm:^3.0.0"
   languageName: unknown
   linkType: soft
