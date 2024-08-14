@@ -3,6 +3,8 @@ import { h } from "vue"
 import DefaultTheme from "vitepress/theme"
 import type { Theme } from "vitepress"
 
+import { enhanceAppWithTabs } from "vitepress-plugin-tabs/client"
+
 import Home from "./components/Home.vue"
 import CreatorsHome from "./components/CreatorsHome.vue"
 import RegisterSW from "./components/RegisterSW.vue"
@@ -16,6 +18,8 @@ import "vue-draggable-resizable/style.css"
 const customTheme: Theme = {
   extends: DefaultTheme,
   enhanceApp({ app }) {
+    enhanceAppWithTabs(app)
+
     app.component("Home", Home)
     app.component("CreatorsHome", CreatorsHome)
   },
