@@ -1,96 +1,108 @@
 ---
-title: Upgrading Projects to 2022
+title: 将项目升级到 2022
 ---
 
-# Upgrading Projects to 2022
+# 将项目升级到 2022
 
-This page explains how to upgrade your VRChat project from version 2019.4.31f1 to Unity 2022.3.6f1.
-Unity 2022 is required to use the latest version of the VRChat SDK. You can check out the [benefits to upgrading here](/creators.vrchat.com/sdk/upgrade/current-unity-version).
+这个界面介绍了如何将您的 VRChat 项目从 2019.4.31f1 版本升级到 Unity 2022.3.22f1。
+最新版本的 VRChat SDK 必须安装 Unity 2022 才能使用。您可以 [在这里查看升级带来的好处](/creators.vrchat.com/sdk/upgrade/current-unity-version)。
 
-If you're using the Creator Companion, upgrading your project is easy! But first, make sure you create backups of your projects.
+如果您在使用创作者助手，升级项目简直是小菜一碟！但是首先，最好确定您为项目都创建了备份。
 
-## Backing up your Unity project
+## 备份您的 Unity 项目
 
-If you're using the [VRChat Creator Companion](https://creators.vrchat.com/), it will automatically suggest copying your project before migrating it. 
+如果您在使用 [VRChat 创作者助手](https://creators.vrchat.com/)，它会在迁移版本前自动建议您备份项目。
 
-1. Click the three dot menu next to the Manage Project button, then choose the "Create Backup" option.
-	- Otherwise, duplicate the whole project folder and give it a new name.
-	- Export your entire project as a Unity Package. This takes a long time and may cause errors.
+1. 为了备份您的项目，首先点击 管理项目（Manage Project）按钮旁边的三点菜单，然后选择“创建备份（Create Backup）”选项。这是备份项目的推荐方法，尤其推荐新创作者使用这一方法！
+	- 需要注意的是，“创建备份（Create Backup）”并不会备份 `Udon`、`UdonSharp` 或 `VRChat Examples` 文件夹。如果您对这些文件夹做出了修改，请选择其他的备份方式。
+	- 您也可以通过复制整个项目文件夹并重命名为一个新名称（比如 `MyProject-Backup`）来备份项目。
+	- 您*可以*将整个项目导出为一个 Unity 包，但是这种方式耗时很久且可能会产生错误。我们不推荐这种方式。
 
-![Creating a backup.](/creators.vrchat.com/images/sdk/migrate-2019-2022/creating_backup.png)
+![创建备份](/creators.vrchat.com/images/sdk/migrate-2019-2022/creating_backup.png)
 
-:::danger Don't skip this step!
-Upgrades can fail. If you keep your original project files safe, you can restore them, try again, and find out what went wrong.
+:::danger 千万不要跳过这一步！
+在向您珍贵的项目进行重大修改前进行备份绝对是一个好主意。
 
-Without a backup, you don't get a second try. If you make a mistake or the upgrade fails, fixing it may be difficult or even impossible.
+升级可能会失败。如果升级失败，您的备份可以被用作一个检查点。如果您保持原始项目文件安全，你可以恢复它们，再次尝试，并找出问题所在。
+
+**没有备份，您就没有第二次尝试的机会。** 如果您犯了错误或者升级发生失败，修复项目可能会很难，甚至是**不可能**的。
 :::
 
-2. Open your project in Unity 2019 to see if there are any errors or warnings in [Unity's console](https://docs.unity3d.com/Manual/Console.html) or the [VRChat SDK Build panel](https://creators.vrchat.com/worlds/creating-your-first-world#step-4---configure-your-world-in-the-sdk-build-panel).
-	- If you don't fix issues in your Unity 2019 project, they may cause issues in Unity 2022.
-	- *Some* warnings can be safely ignored. But try to understand why they are happening.
+1. 在 Unity 2019 中打开您的项目，检查 [Unity 控制台](https://docs.unity3d.com/Manual/Console.html)或 [VRChat SDK Build 面板](/creators.vrchat.com/worlds/creating-your-first-world#step-4-configure-your-world-in-the-sdk-build-panel)中是否有任何报错或警告。
+    - 如果您没有修复 Unity 2019 项目中的问题，它们可能会在 Unity 2022 中产生问题。
+    - *一些*警告可以被安全的忽略，但是您最好试着搞清楚它们为什么会出现。
 
-Now you're ready to upgrade!
+现在您已经准备好升级了！
 
-## Using the Creator Companion 
+:::danger 在上传之前测试您的内容
 
-There are two ways you can upgrade your project from the VCC: Directly from your Projects page or from each Manage Project page. **Make sure the project you are trying to upgrade is closed before proceeding.**
+在成功用 Unity 2022 上传世界或虚拟形象之后，您就无法再用 Unity 2019 上传它们了。
 
-1. Go to Settings, then click Updates to see if your Creator Compaion needs to be updated. Without updating, prompts to upgrade to Unity 2022 will not show.
+:::
 
-![Check VCC updates.](/creators.vrchat.com/images/sdk/migrate-2019-2022/updating_vcc.png)
+## 使用创作者助手 
 
-2. On the Projects page, you'll see a new **Unity** column with a version switcher for each of your projects. Click this, then click Migrate to Unity 2022.
+您可以通过两种方法在创作者助手中升级项目：直接在 项目（Projects）页面中升级，或是在项目各自的 管理项目（Manage Project）页面中升级。**在继续操作前，确保您试图升级的项目当前没有打开。**
 
-![Click correct project.](/creators.vrchat.com/images/sdk/migrate-2019-2022/updating_vcc_via_projects.png)
+1. 进入设置（Settings），然后点击 更新（Updates）来检查创作者助手是否需要更新。若不更新，升级到 Unity 2022 的提示就不会显示。
 
-Otherwise, click **Manage Project** on any project and you'll see an Upgrade to 2022 banner. 
+![检查创作者助手更新](/creators.vrchat.com/images/sdk/migrate-2019-2022/updating_vcc.png)
 
-![Upgrade via Manage Project.](/creators.vrchat.com/images/sdk/migrate-2019-2022/manage_project_upgrade.png)
+2. 在 项目（Projects）页面，您可能会在每个项目中看到一个新的 **Unity** 列，其中包括一个版本切换器。点击它，然后点击 迁移到 Unity 2022（Migrate to Unity 2022）。
 
-## Using the Unity website
+![点击正确的项目](/creators.vrchat.com/images/sdk/migrate-2019-2022/updating_vcc_via_projects.png)
 
-Unity Hub is a separate application that allows you to seamlessly install and work with multiple Unity versions at one time. You can also use it to install Unity 2022 if you do not wish to use the Creator Companion.
+或者，在任意项目上点击 **管理项目（Manage Project）**，然后您就会看到一个 升级到 2022（Upgrade to 2022）的横幅。
 
-1. Install the [Unity Hub](https://unity.com/download).
-	- You can follow Unity's official [installation guide](https://learn.unity.com/tutorial/install-the-unity-hub-and-editor).
-	- You'll need to create a [Unity account](https://id.unity.com/account/new) after installing Unity Hub.
-2. Visit [Unity's download archive](https://unity.com/releases/editor/archive).
-3. Click **Unity 2202.x**.
-4. Scroll down until you see Unity **2022.3.6.**
-	- Do not choose the first Unity version in the list!
+![通过 管理项目（Manage Project）升级](/creators.vrchat.com/images/sdk/migrate-2019-2022/manage_project_upgrade.png)
 
-![Select the right version to install in the Unity Archive.](/creators.vrchat.com/images/sdk/migrate-2019-2022/unity_webpage_search.png)
-- Click the blue **Unity Hub** button.
+## 使用 Unity Hub
 
-![Accept the browser prompt to open Unity Hub.](/creators.vrchat.com/images/sdk/migrate-2019-2022/browser-prompt-unity-hub.png)
+Unity Hub 是一款独立的应用程序，可让您同时无缝安装和使用多个 Unity 版本。若您不愿使用创作者助手，您也可以使用它来安装 Unity 2022。
 
-5. Click **Open Unity Hub** in your web browser.
+1. 安装 [Unity Hub](https://unity.com/download)。
+    - 您可以跟随 Unity 的官方[安装教程](https://learn.unity.com/tutorial/install-the-unity-hub-and-editor)。
+    - 您需要在安装 Unity Hub 后创建一个 [Unity 账户](https://id.unity.com/account/new)。
+2. 访问 [Unity 下载存档](https://unity.com/releases/editor/archive)。
+3. 点击 **Unity 2022.x**。
+4. 向下滚动直到看到 Unity 2022.3.22，然后点击蓝色的 **Unity Hub** 按钮。
+   - 不要选择列表中的第一个 Unity 版本！
+   - 您也可以到[当前支持的 Unity 版本页面](/creators.vrchat.com/sdk/upgrade/current-unity-version)找到下载正确版本 Unity 的链接。
 
-![Enable Android Build support if you'd like to be able to develop content for Android devices.](/creators.vrchat.com/images/sdk/migrate-2019-2022/unity_version_hub_upgrade_android.png)
+![在 Unity 下载存档中选择正确的版本并安装](/creators.vrchat.com/images/sdk/migrate-2019-2022/unity_webpage_search.png)
 
-6. Enable **Android Build Support** in the Unity installation screen.
-	- You can skip this if you're not planning on uploading content to Android or Quest yet.
-	- You can complete this step later by choosing [Add modules](https://docs.unity3d.com/2020.1/Documentation/Manual/GettingStartedAddingEditorComponents.html) in the Unity Hub.
-7. Click **Continue** to install Unity 2022.3.6.
+![同意浏览器弹窗以打开 Unity Hub](/creators.vrchat.com/images/sdk/migrate-2019-2022/browser-prompt-unity-hub.png)
 
-## Managing Unity versions
+5. 在您的浏览器中点击 **Open Unity Hub**。
 
-It's easy to check what versions of Unity are available on your PC for use with the Creator Companion. You can also change what version of Unity is used to open all *new* projects.
+![如果你想为 Android 设备开发内容，需要打开 Android 构建支持（Android Build Support）](/creators.vrchat.com/images/sdk/migrate-2019-2022/unity_version_hub_upgrade_android.png)
 
-1. In the CC, go to **Settings**.
-2. Under **Unity Editors**, use the dropdown menu to change the default Unity editor. This will **not** apply retroactively to any projects already created.
-3. If you have not already installed Unity 2022.3.6, [follow the instructions above](unity-2022.md#Using-the-Creator-Companion). 
-4. If you don't see a version of Unity here that you've installed, try using the refresh button or finding the path directly using the file button.
+6. 在 Unity 安装界面中选择 **Android 构建支持（Android Build Support）**。
+	- 如果您并未计划在 Android 或 Quest 平台上传内容，可以跳过此步。
+	- 安装之后，您可通过在 Unity Hub 中选择 [添加模块（Add modules）](https://docs.unity3d.com/hub/manual/AddModules.html) 来完成这一步骤。
+7. 点击 **继续（Continue）** 来安装 Unity 2022.3.22。
 
-## Packages
-If you are trying to add packages to your 2022 project, please keep in mind:
+## 管理多个 Unity 版本
 
-- Every Curated Package has a version which works in 2022.
-- Other packages *may* work, but some may need a new version from the package author.
+您可轻松查看电脑上可与创作者助手配合使用的 Unity 版本。您还可以更改用于打开所有*新*项目的 Unity 版本。
 
-## Troubleshooting
-- Test your world before uploading it. Check Unity's console for errors, and test your world in VRChat to see if it work.
-	- After successfully uploading a world with Unity 2022, you won't be able to upload that same world with Unity 2019.
-- [Make sure to activate your Unity Personal license](https://support.unity.com/hc/en-us/articles/211438683-How-do-I-activate-my-license-) before using VRChat's SDK. Unity is free for personal use.
-- To learn more about the Unity Hub, visit [Unity's documentation](https://docs.unity3d.com/hub/manual/index.html).
-- If you're experiencing issues related to the SDK itself, please read our [SDK Troubleshooting](/creators.vrchat.com/sdk/sdk-troubleshooting) page.
+1. 在创作者助手中，进入**设置（Settings）**。
+2. 在 **Unity 编辑器**下，使用下拉菜单来更改默认的 Unity 编辑器。这*不会*影响已经创建的任何项目。
+3. 如果您还没有安装 Unity 2022.3.22，[跟随上面的操作进行](unity-2022.md#使用创作者助手)。
+4. 如果您没有看到已经安装的 Unity 版本，可以试试使用刷新按钮或直接使用文件按钮查找路径。
+
+## 包
+
+如果您试着为 2022 项目添加包，时刻记住：
+
+- 每一个精选包都有能在 2022 版本工作的版本。
+- 其他包*可能*可以工作，但是有一些包可能需要作者发布新的版本！
+- 使用过期的包可能会产生很多问题，因此请确保您导入的任何内容都与 Unity 2022 兼容。
+
+# 疑难解答
+
+- 在上传之前测试您的世界。查看 Unity 的控制台中是否有报错，并在 VRChat 中测试您的世界是否正常工作。
+    - 在成功使用 Unity 2022 上传世界后，您将无法再使用 Unity 2019 上传这个世界。
+- 在使用 VRChat 的 SDK 前，[确保您激活了您的 Unity 个人版许可（Unity Personal license）](https://support.unity.com/hc/en-us/articles/211438683-How-do-I-activate-my-license-)。Unity 免费供个人使用。
+- 若要进一步了解 Unity Hub，请访问 [Unity 文档](https://docs.unity3d.com/hub/manual/index.html)。
+- 如果您遇到与 SDK 本身有关的问题，请阅读我们的 [SDK 疑难解答](/creators.vrchat.com/sdk/sdk-troubleshooting) 页面。

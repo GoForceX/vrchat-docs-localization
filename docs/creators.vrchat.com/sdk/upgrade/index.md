@@ -11,7 +11,7 @@ description: 学习如何将 Unity 升级至最新版本
 - **Unity 2022 迁移指南**：了解如何将 Unity 2019 项目升级至 Unity 2022，请阅读我们的[官方迁移指南](/creators.vrchat.com/sdk/upgrade/unity-2022)。
 - **次要版本升级**：了解如何进行[Unity 次要版本的升级](/creators.vrchat.com/sdk/upgrade/migrating-to-a-newer-minor-unity-version)。
 
-::: info 开始新项目？
+::: tip 开始新项目？
 
 阅读 [设置 SDK](/creators.vrchat.com/sdk/) 部分，了解如何利用 VRChat 最新的 Unity SDK 开始您的新项目。
 

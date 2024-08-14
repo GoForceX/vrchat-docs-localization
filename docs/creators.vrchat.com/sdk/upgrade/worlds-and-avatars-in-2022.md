@@ -1,16 +1,16 @@
 ---
-title: New Worlds and Avatars in 2022
+title: 2022 版本中的新世界和虚拟形象
 ---
 
-# New Worlds and Avatars in 2022
+# 2022 版本中的新世界和虚拟形象
 
-Looking to make a new project in Unity 2022? Luckily it's pretty easy: The Creator Companion will handle most of the work for you!
+想要在 Unity 2022 中制作新项目？幸运的是，这还挺简单的：因为创作者助手会帮您处理大部分工作！
 
-### Download the Creator Companion
-**If you don't already have the VCC**, you'll need to download it! 
+### 下载创作者助手
+**如果你没有安装创作者助手**，那您就需要下载它！
 
-Follow the steps on our [Getting Started](/creators.vrchat.com/sdk/) page.
+跟随我们[快速开始](/creators.vrchat.com/sdk/)页面上的步骤。
 
-This is the easiest way to create a new project with the correct Unity version. The Creator Companion will automatically install Unity 2022.3.6, the world SDK, and the avatar SDK for you.
+这是用正确的 Unity 版本创建新项目的最简单方式。创作者助手会自动为您安装 Unity 2022.3.22f1、世界 SDK 以及虚拟形象 SDK。
 
-**If you already have the VCC**, [make sure it's updated and upgraded to Unity 2022](unity-2022.md#using-the-creator-companion), and you're [launching all new projects in Unity 2022](unity-2022.md#managing-unity-versions).
+如果您已经安装了创作者助手，[确保它已经更新并升级到了 Unity 2022](unity-2022.md#使用创作者助手), 并且您将[在 Unity 2022 中打开所有新项目](unity-2022.md#管理多个-unity-版本)。
